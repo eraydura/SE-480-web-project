@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Graduate Chat</title>
+       <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <style>
+	   
+	   input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    }
+	   .message{
+		   font-size: 30px;
+		   
+	   }
+   </style>
+   <script src = "/socket.io/socket.io.js"></script>
+   <script>
+      var socket = io();
+      function setUsername() {
+         socket.emit('setUsername', document.getElementById('name').value);
+      };
+      var user;
+      socket.on('userExists', function(data) {
+         document.getElementById('error-container').innerHTML = data;
+      });
+      socket.on('userSet', function(data) {
+         user = data.username;
+         document.body.innerHTML = '<input type = "text" class="chat" placeholder = "WRITE MESSAGE HERE" id = "message">\
+         <button type = "button" class="btn btn-primary" name = "button" onclick = "sendMessage()">Send</button>\
+         <div id = "message-container"></div>';
+      });
+      function sendMessage() {
+         var msg = document.getElementById('message').value;
+         if(msg) {
+            socket.emit('msg', {message: msg, user: user});
+         }
+      }
+      socket.on('newmsg', function(data) {
+         if(user) {
+            document.getElementById('message-container').innerHTML += '<div class="message"><b>' + 
+               data.user + '</b>: ' + data.message + '</div>'
+         }
+      })
+   </script>
+   
+   <body bgcolor="#000000">
+      <div id = "error-container" class="chat"></div>
+      <h2 style="color:aqua;  margin-top: 220px ; font-size: 70px; margin-left: 330px"> WHAT'S YOUR NICKNAME</h2>
+      <input style="margin-top: auto; font-size: 50px; margin-left: 300px ; width: 19em;" size="10" id = "name" type = "text"  name = "name" value = ""  placeholder = "Enter your name!">
+	   <br> </br>
+      <button style="margin-left: 300px; width: 300px; height: 80px; font-size: 30px;"  type="button" onclick = "setUsername()" class="btn btn-primary">Let Me Chat!</button>
+   </body>
+</html>

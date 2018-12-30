@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<?php include('server.php'); ?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>GRADUATION-IEU</title>
@@ -241,18 +243,18 @@ Graduates need to update their personal information in order to benefit from the
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Aboutus.html">About Us</a>
+        <a class="nav-link" href="aboutUs.php">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#eray">Contact</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Register
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Register for Graduation</a>
-		  <a class="dropdown-item" href="#">Register for Company</a>
+          <a class="dropdown-item" href="registrationGraduate.php">Register for Graduation</a>
+		  <a class="dropdown-item" href="registrationCompany.php">Register for Company</a>
         </div>
         
       </li>
@@ -273,13 +275,13 @@ Graduates need to update their personal information in order to benefit from the
 	<div class="container">
 	 <div class="row">
     <div class="col-lg">
-      <button type="button" class="btn btn-danger" style="width:inherit" ><img src="8.jpg" width="50"><h3>JOIN US!</h3></button>
+      <button type="button" class="btn btn-danger" onclick="window.location.href='loginGraduate.php'" style="width:inherit" ><img src="8.jpg" width="50"><h3>JOIN US!</h3></button>
     </div>
     <div class="col-lg">
-      <button type="button" class="btn btn-primary" style="width:inherit" ><a href="Write.php"><img src="img_215612.png" width="50"></a><h3>WRITE!</h3></button>
+      <button type="button" class="btn btn-primary" onClick="alert('First you have to login');" style="width:inherit" ><img src="img_215612.png" width="50"></a><h3>WRITE!</h3></button>
     </div>
     <div class="col-lg">
-      <button type="button" class="btn btn-warning" style="width:inherit" ><img src="101791-200.png" width="50"><h3>FIND FRIEND!</h3></button>
+      <button type="button" class="btn btn-warning" onClick="alert('First you have to login');" style="width:inherit" ><img src="101791-200.png" width="50"><h3>FIND FRIEND!</h3></button>
     </div>
     <div class="col-lg">
      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#shareModal" style="width:inherit" ><img src="Group-512.png" width="50"><h3>SHARE FRIEND!</h3></button>
@@ -351,6 +353,19 @@ Graduates need to update their personal information in order to benefit from the
       <th scope="col">Deadline</th>
     </tr>
   </thead>
+   <tr >
+      <th scope="row"  >1</th>
+      
+      <td>Google</td>
+      <td>Software Intern</td>
+      <td>02.02.2019</td>
+		</tr>
+     <tr>
+      <th scope="row"  >2</th>
+      <td>IBM</td>
+      <td>Software Intern</td>
+      <td>02.01.2019</td>
+    </tr>
 </table>
 	</div> 
 	<div class="container" style="margin-top:50px " >
@@ -375,14 +390,14 @@ Graduates need to update their personal information in order to benefit from the
       <td ><a href=" " title="Click for the full site" style="background-color:#FFFFFF;color:#000000;text-decoration:none">Graduation Night</a></td>
       <td>22.11.2018-12:00</td>
       <td>22.11.2018-15:00</td>
-      <td><a href="https://twitter.com/ieumezunder/status/852948078260883458">Click it</a></td>
+      <td><a onmouseover="alert('First you have to login')">Click it</a></td>
 		</tr>
      <tr>
       <th scope="row"  >2</th>
       <td ><a href=" " title="Click for the full site" style="background-color:#FFFFFF;color:#000000;text-decoration:none">Graduation Meeting</a></td>
       <td>28.11.2018-12:00</td>
       <td>28.11.2018-15:00</td>
-      <td><a href="https://twitter.com/ieumezunder/status/860856103718060032">Click it</a></td>
+      <td><a onmouseover="alert('First you have to login')">Click it</a></td>
     </tr>
   <tbody>
     <tr >
@@ -402,6 +417,15 @@ Graduates need to update their personal information in order to benefit from the
       <th scope="col">Date</th>
       <th scope="col">Anouncement Link</th>
     </tr>
+       <tr>
+      <th scope="row"  >New Year Meeting</th>
+      <td ><a href=" " title="Click for the full site" style="background-color:#FFFFFF;color:#000000;text-decoration:none">28.12.2018-12:00</a></td>
+     
+      <td><a onmouseover="alert('First you have to login')">Click it</a></td>
+    </tr>
+    
+  <tbody>
+    <tr >
   </thead>
   <tbody>
     <tr >
@@ -452,10 +476,11 @@ Graduates need to update their personal information in order to benefit from the
 		
 	<!-- Alumnies slide show content finished -->	
 	  <div class="container"><h2>Activities</h2></div>
+	  
 <div id="caleandar" style="margin-bottom: 50px">
-<script type="text/javascript" src="js/caleandar.js">
+<script type="text/javascript" src="caleandar.js">
 </script>   
-<script type="text/javascript" src="js/demo.js">
+<script type="text/javascript" src="demo.js">
 </script>
 </div>
 </div>
@@ -463,8 +488,8 @@ Graduates need to update their personal information in order to benefit from the
 	   <!-- Job Advert-Activities-Anouncement table content finished -->	
 	   <!-- Login-Chat Small Column content-->
   <div class="col-sm-3">	
-  <button type="button" class="btn btn-primary" style="margin-top:10px; width:inherit; height:50px">Log In for Company</button>
-  <button type="button" class="btn btn-primary" onclick="window.location.href='http://localhost:3000/'" style="margin-top:20px; width:inherit; height:50px">GRADUATION-CHAT</button>
+  <button type="button" onclick="window.location.href='loginCompany.php'" class="btn btn-primary" style="margin-top:10px; width:inherit; height:50px">Log In for Company</button>
+  <button type="button" class="btn btn-primary" onclick="alert('First you have to login');" style="margin-top:20px; width:inherit; height:50px">GRADUATION-CHAT</button>
   <video width="0" id="gif" >
   <source  src="wniuu-go0ph.mp4" type="video/mp4">
 </video>
@@ -476,15 +501,30 @@ Graduates need to update their personal information in order to benefit from the
 	  <img src="gif.PNG" id="gif3" style="width: 250px">
   <div class="list-group" style="width:auto ; margin-bottom: 50px">
  
-   
-   <button type="button" class="list-group-item list-group-item-action active">
-    Log in for Graduation
-  </button>
-  <button type="button" class="list-group-item list-group-item-action"><label for="formGroupExampleInput2">ID-Number</label>
-    <input onkeypress="playVid2()" type="text" maxlength="11" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-    <label for="exampleInputPassword1" style="margin-top: 20px">Password</label>
+    <button type="button" class="list-group-item list-group-item-action">
+   <form class="container" action="indexlogin.php" method="post">
+        <?php include('errors.php'); ?>
+      
+                        <h5><strong>ID INFORMATION</strong></h5>
+                        <div class="form-group">
+                            <input class="form-control" onKeyPress="playVid2()" type="text" placeholder="E-mail" name="email" required>
+                        </div>
+                  
+                        <h5><strong>LOGIN INFORMATION </strong></h5>
+                        <div class="form-group"><input onKeyPress="playVid()" class="form-control" type="password" placeholder="Password" name="password" required>
+                        </div>
+                        
+                                 
+                       <div class="form-group">
+                        <button type="submit" class="btn" name="loginGraduate">Login</button>
+                        </div>
+                    </form>
+                       
+
+         
     
-    <input onkeypress="playVid()"  type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+	  </button>
     <script>
 		
 function playVid2() {
@@ -513,11 +553,7 @@ function playVid() {
 	  </script>
     
      <!-- Gif animation show content finished-->
-	  <input type="checkbox" name="hatirla" value="1" style="margin-top:20px" /> Remember Me
-    </button>
-  <button type="button" class="list-group-item list-group-item-action">
-  <button type="button" class="btn btn-primary">Submit </button></button>
-  <button type="button" class="list-group-item list-group-item-action" disabled> </button>
+	
 
 </div>
 
@@ -526,7 +562,7 @@ function playVid() {
 	</div>
 	 <!-- Login-Chat Small Column content finished-->
 	 <!-- Footer content-->
-<div class="card text-center" id="eray">
+<div class="card text-center" id="contact">
   <div class="card-header">
     <h4>Follow us on social Media</h4> <a href="https://www.facebook.com/izmirekonomiuniversitesi/"><img style="max-width: 20px" src="facebook_2.png"></a> <a href="https://www.instagram.com/izmirekonomiuni/?hl=tr"><img style="max-width: 20px" src="instagram.png"> </a><a href="https://twitter.com/izmirekonomiuni"><img style="max-width: 20px" src="twitter.png"></a>
   </div>

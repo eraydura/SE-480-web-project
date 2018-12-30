@@ -24,42 +24,40 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown" >
     <ul class="navbar-nav"  style="margin-left: auto">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Untitled-1.html">About Us</a>
+        <a class="nav-link" href="aboutUs.php">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Register
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Register for Graduation</a>
-		  <a class="dropdown-item" href="#">Register for Company</a>
+          <a class="dropdown-item" href="registrationGraduate.php">Register for Graduation</a>
+      <a class="dropdown-item" href="registrationCompany.php">Register for Company</a>
         </div>
         
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Help(SSS)</a>
+        <a class="nav-link" href="HELP.html">Help(SSS)</a>
       </li>
     </ul>
   </div>
 </nav>
 </div>
 <div class="container">
-<div class="header">
-    <h2>Login</h2>
-</div>
 
-    <form action="loginCompany.php" method="post">
+    
+
+
+    <form style="margin-bottom: 200px; margin-top: 170px" action="indexlogin.php" method="POST">
         <?php include('errors.php'); ?>
-        <div class="imgcontainer">
-            <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a>
-    <img src="C:\Users\Serpil\Desktop\\mezun.png" alt="Avatar" class="avatar">
-  </div>
+        <h2>Login</h2>
+     
                         <h5><strong>ID INFORMATION</strong></h5>
                         <div class="form-group">
                             <input class="form-control" type="text" placeholder="E-mail" name="email" required>
@@ -71,20 +69,13 @@
                         
                         
                         <div class="form-group">
-                        <button type="submit" class="btn btn-primary" name="loginCompany">Login</button>
+                        <button type="submit" class="btn" name="Company">Login</button>
                         </div>
 
-                        <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-    
-
-    <span class="psw">Forgot <a href="#">password?</a></span>
-                    </form>
 	</div>
-                    <div class="card text-center">
+                  <div class="card text-center" id="contact">
   <div class="card-header">
-    <h4>Follow us on social Media</h4> <a href=""><img style="max-width: 20px" src="facebook_2.png"></a> <a href=""><img style="max-width: 20px" src="instagram.png"> </a><a href=""><img style="max-width: 20px" src="twitter.png"></a>
+    <h4>Follow us on social Media</h4> <a href="https://www.facebook.com/izmirekonomiuniversitesi/"><img style="max-width: 20px" src="facebook_2.png"></a> <a href="https://www.instagram.com/izmirekonomiuni/?hl=tr"><img style="max-width: 20px" src="instagram.png"> </a><a href="https://twitter.com/izmirekonomiuni"><img style="max-width: 20px" src="twitter.png"></a>
   </div>
   <div class="card-body">
     <h5 class="card-title"></h5>
@@ -94,23 +85,31 @@
     <h4>Our Adress</h4>
   İzmir University of Economics 
   Sakarya Caddesi, No:156
-  35330 Balçova <br> İzmir/TÜRKİYE<br> 
+  35330 Balçova <br> İzmir/TURKEY<br> 
   <img style="max-width: 20px" src="telephone.png">+90 232 279 2525 
     </div> 
     <br>
     
     <div class="col-sm">
-     
+       <!-- Map content-->
     </div>
-    <div class="col-sm">
-     <iframe frameborder="0" height="200" marginheight="0" marginwidth="0" scrolling="no" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Ekonomi+%C3%9Cniversitesi,+Bal%C3%A7ova,+Sakarya+Cad.+156,+Izmir,+T%C3%BCrkiye&amp;aq=0&amp;oq=izmir+ekonomi&amp;sll=37.0625,-95.677068&amp;sspn=58.685917,114.169922&amp;t=m&amp;ie=UTF8&amp;hq=Ekonomi+%C3%9Cniversitesi,+Bal%C3%A7ova,+Sakarya+Cad.+156,&amp;hnear=Izmir%2FIzmir+Province,+Turkey&amp;ll=38.394146,27.04113&amp;spn=0.053816,0.111408&amp;z=13&amp;output=embed" width="150%"></iframe>
+    <div class="col-sm" >
+     <iframe frameborder="0" style="width:inherit;height:inherit"  marginheight="inherit" marginwidth="inherit" scrolling="no" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Ekonomi+%C3%9Cniversitesi,+Bal%C3%A7ova,+Sakarya+Cad.+156,+Izmir,+T%C3%BCrkiye&amp;aq=0&amp;oq=izmir+ekonomi&amp;sll=37.0625,-95.677068&amp;sspn=58.685917,114.169922&amp;t=m&amp;ie=UTF8&amp;hq=Ekonomi+%C3%9Cniversitesi,+Bal%C3%A7ova,+Sakarya+Cad.+156,&amp;hnear=Izmir%2FIzmir+Province,+Turkey&amp;ll=38.394146,27.04113&amp;spn=0.053816,0.111408&amp;z=13&amp;output=embed" width="150%"></iframe>
+       <!-- Map content finished-->
     </div>
   </div>
 </div>
    
   </div>
+    <!-- Visited how many people content-->
   <div class="card-footer text-muted">
-      <div ><a>Sitemizi  <script language="Javascript" src="http://sa.sayaclar.com/c/s4.php?a=w8uiz30&s=1a7"></script> <a> kişi ziyaret etti.</a></a></div>
+      <div ><a>Our website,
+      <script language="Javascript"> document.write('<a target="_blank"><img src="http://sa.sayaclar.com/../rkm/1a7/0.png" border="0" /></a>');document.write('<a  target="_blank"><img src="http://sa.sayaclar.com/../rkm/1a7/0.png" border="0" /></a>');document.write('<a target="_blank"><img src="http://sa.sayaclar.com/../rkm/1a7/0.png" border="0" /></a>');document.write('<a  target="_blank"><img src="http://sa.sayaclar.com/../rkm/1a7/2.png" border="0" /></a>');document.write('<a  target="_blank"><img src="http://sa.sayaclar.com/../rkm/1a7/0.png" border="0" /></a>');
+      var sc_project=11775990;var sc_invisible=1;var sc_security="7a33e1bd";
+      ;document.write('<noscript><div class="statcounter"><img class="statcounter" src="//c.statcounter.com/11775990/0/7a33e1bd/1/" alt="s"></div></noscript>')
+      </script>
+     
+      <a> people visited.</a></a></div>
       <footer>&copy; Copyright 2018 ieu.edu.tr</footer>
 
   </div>

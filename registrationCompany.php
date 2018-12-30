@@ -10,7 +10,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+   
+                         
     <script type="text/javascript">
+
 function ValidateContactForm()
 {
 var email = document.ContactForm.Email;
@@ -44,7 +47,6 @@ if(document.registration.faculty.selectedIndex==0)
 document.registration.faculty.focus();
 return false;
 }
-
 
 
 
@@ -110,26 +112,26 @@ return false;
   <div class="collapse navbar-collapse" id="navbarNavDropdown" >
     <ul class="navbar-nav"  style="margin-left: auto">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Untitled-1.html">About Us</a>
+        <a class="nav-link" href="aboutUs.php">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Register
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Register for Graduation</a>
-		  <a class="dropdown-item" href="#">Register for Company</a>
+          <a class="dropdown-item" href="registrationGraduate.php">Register for Graduation</a>
+      <a class="dropdown-item" href="registrationCompany.php">Register for Company</a>
         </div>
         
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Help(SSS)</a>
+        <a class="nav-link" href="HELP.html">Help(SSS)</a>
       </li>
     </ul>
   </div>
@@ -163,24 +165,67 @@ return false;
 
                         </div>
                         <div class="form-group"><input class="form-control" type="password" placeholder="Confirm Password" name="password_2"></div>
+                                  <div class="form-group">
+                    <p>Please write a result: What is the value of sin 30°?</p>
+                       
+                 
 
-                        <div class="form-group">
-                            <div class="g-recaptcha" data-sitekey="6LfDhQsUAAAAADPci_lPsA9nlcP93t4bzTOCs1uA"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfDhQsUAAAAADPci_lPsA9nlcP93t4bzTOCs1uA&amp;co=aHR0cHM6Ly9tZXp1bi51c2FrLmVkdS50cjo0NDM.&amp;hl=tr&amp;v=v1542004393985&amp;size=normal&amp;cb=49be8g4drfua" width="304" height="78" role="presentation" name="a-gkowrhjww2ld" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name=s"g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
-                        </div>
-                        
+                       <input id="numb" type="text">
+
+                     <button type="button" class="btn btn-primary " name="try">Try It </button>
+
+                      <p id="demo"></p>
+
+                     <script>
+                     function myFunction() {
+                     var x, text;
+
+                       // Get the value of input field with id="numb"
+
+                       x = document.getElementById("numb").value;
+
+
+                    if (isNAN(x) || x!=0.5) {
+                     text = "Input not true";
+                     } else {
+                      text = "Input OK";
+                      }
+                     document.getElementById("demo").innerHTML = text;
+                     }
+                     </script>
+
                        
                         
-
+                       <div class="form-group">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" onclick="myFunction()" name="accept" id="inlineCheckbox1" value="yes">I have read<a href=""> Membership Condition</a>
+                            </label>
+                            
+                        </div>
+                           <script>
+                         function myFunction() {
+                         var checkBox = document.getElementById("inlineCheckbox1");
+                         var button = document.getElementById("btn");
+						
+						 
+                         if (checkBox.checked == true && document.getElementById("demo").innerHTML!="Input not true" ){
+                         button.style.display = "block";
+                         } else {
+                         button.style.display = "none";
+                         }
+                         }
+                         </script>
+                       
                         <input type="hidden" name="_token" value="9GhPiPYIwB3Aotp2qFj2ZY2vPA2rImG4zgW5J8Gr">
-                        <button type="submit" class="btn btn-primary" name="registerCompany">Register</button>
-		
+                        <button type="submit" style="display:none" onclick="myFunction()"   id="btn" class="btn btn-primary" name="registerCompany" >Register</button>
+                       
                     </form>
                 </div>
-	</div>
-	
-	<div class="card text-center">
+    </div>
+    
+    <div class="card text-center" id="contact">
   <div class="card-header">
-    <h4>Follow us on social Media</h4> <a href=""><img style="max-width: 20px" src="facebook_2.png"></a> <a href=""><img style="max-width: 20px" src="instagram.png"> </a><a href=""><img style="max-width: 20px" src="twitter.png"></a>
+    <h4>Follow us on social Media</h4> <a href="https://www.facebook.com/izmirekonomiuniversitesi/"><img style="max-width: 20px" src="facebook_2.png"></a> <a href="https://www.instagram.com/izmirekonomiuni/?hl=tr"><img style="max-width: 20px" src="instagram.png"> </a><a href="https://twitter.com/izmirekonomiuni"><img style="max-width: 20px" src="twitter.png"></a>
   </div>
   <div class="card-body">
     <h5 class="card-title"></h5>
@@ -190,23 +235,31 @@ return false;
     <h4>Our Adress</h4>
   İzmir University of Economics 
   Sakarya Caddesi, No:156
-  35330 Balçova <br> İzmir/TÜRKİYE<br> 
+  35330 Balçova <br> İzmir/TURKEY<br> 
   <img style="max-width: 20px" src="telephone.png">+90 232 279 2525 
     </div> 
     <br>
     
     <div class="col-sm">
-     
+       <!-- Map content-->
     </div>
-    <div class="col-sm">
-     <iframe frameborder="0" height="200" marginheight="0" marginwidth="0" scrolling="no" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Ekonomi+%C3%9Cniversitesi,+Bal%C3%A7ova,+Sakarya+Cad.+156,+Izmir,+T%C3%BCrkiye&amp;aq=0&amp;oq=izmir+ekonomi&amp;sll=37.0625,-95.677068&amp;sspn=58.685917,114.169922&amp;t=m&amp;ie=UTF8&amp;hq=Ekonomi+%C3%9Cniversitesi,+Bal%C3%A7ova,+Sakarya+Cad.+156,&amp;hnear=Izmir%2FIzmir+Province,+Turkey&amp;ll=38.394146,27.04113&amp;spn=0.053816,0.111408&amp;z=13&amp;output=embed" width="150%"></iframe>
+    <div class="col-sm" >
+     <iframe frameborder="0" style="width:inherit;height:inherit"  marginheight="inherit" marginwidth="inherit" scrolling="no" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Ekonomi+%C3%9Cniversitesi,+Bal%C3%A7ova,+Sakarya+Cad.+156,+Izmir,+T%C3%BCrkiye&amp;aq=0&amp;oq=izmir+ekonomi&amp;sll=37.0625,-95.677068&amp;sspn=58.685917,114.169922&amp;t=m&amp;ie=UTF8&amp;hq=Ekonomi+%C3%9Cniversitesi,+Bal%C3%A7ova,+Sakarya+Cad.+156,&amp;hnear=Izmir%2FIzmir+Province,+Turkey&amp;ll=38.394146,27.04113&amp;spn=0.053816,0.111408&amp;z=13&amp;output=embed" width="150%"></iframe>
+       <!-- Map content finished-->
     </div>
   </div>
 </div>
    
   </div>
+    <!-- Visited how many people content-->
   <div class="card-footer text-muted">
-      <div ><a>Sitemizi  <script language="Javascript" src="http://sa.sayaclar.com/c/s4.php?a=w8uiz30&s=1a7"></script> <a> kişi ziyaret etti.</a></a></div>
+      <div ><a>Our website,
+      <script language="Javascript"> document.write('<a target="_blank"><img src="http://sa.sayaclar.com/../rkm/1a7/0.png" border="0" /></a>');document.write('<a  target="_blank"><img src="http://sa.sayaclar.com/../rkm/1a7/0.png" border="0" /></a>');document.write('<a target="_blank"><img src="http://sa.sayaclar.com/../rkm/1a7/0.png" border="0" /></a>');document.write('<a  target="_blank"><img src="http://sa.sayaclar.com/../rkm/1a7/2.png" border="0" /></a>');document.write('<a  target="_blank"><img src="http://sa.sayaclar.com/../rkm/1a7/0.png" border="0" /></a>');
+      var sc_project=11775990;var sc_invisible=1;var sc_security="7a33e1bd";
+      ;document.write('<noscript><div class="statcounter"><img class="statcounter" src="//c.statcounter.com/11775990/0/7a33e1bd/1/" alt="s"></div></noscript>')
+      </script>
+     
+      <a> people visited.</a></a></div>
       <footer>&copy; Copyright 2018 ieu.edu.tr</footer>
 
   </div>
